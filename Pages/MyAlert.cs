@@ -17,11 +17,11 @@ namespace ScadaWeb.Pages
 
         public MyAlert()
         {
-            // Varsayılan WebDriver ile WebDriverWait başlatılır
+            // Standard-WebDriver wird initialisiert mit WebDriverWait
             Wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
         }
 
-        // Alert'in varlığını kontrol et
+        // Überprüfen, ob ein Alert vorhanden ist
         private IAlert GetAlert()
         {
             try
@@ -40,7 +40,7 @@ namespace ScadaWeb.Pages
             }
         }
 
-        // Alert içinde metin gönder
+        // Text in den Alert eingeben
         public void EnterText(string textToEnter)
         {
             try
@@ -54,7 +54,7 @@ namespace ScadaWeb.Pages
             }
         }
 
-        // Alert'i kabul et (OK)
+        // Alert akzeptieren (OK)
         public void AcceptAlert()
         {
             try
@@ -68,7 +68,7 @@ namespace ScadaWeb.Pages
             }
         }
 
-        // Alert'i iptal et (Cancel)
+        // Alert ablehnen (Abbrechen) (Cancel)
         public void DismissAlert()
         {
             try
