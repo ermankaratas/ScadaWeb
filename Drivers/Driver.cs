@@ -14,7 +14,7 @@ namespace ScadaWeb.Drivers
     public class Driver
     {
         private static ThreadLocal<IWebDriver> threadDriver = new ThreadLocal<IWebDriver>();
-        private static ThreadLocal<string> threadBrowserName = new ThreadLocal<string>();
+        public static ThreadLocal<string> threadBrowserName = new ThreadLocal<string>();
 
         public static IWebDriver GetDriver()
         {
