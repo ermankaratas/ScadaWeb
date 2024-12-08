@@ -16,8 +16,15 @@ namespace ScadaWeb.StepDefinitions
     public class _001TagesBTBSteps
     {
         private BTBPage _btbPage = new BTBPage();
-        private string? _name;
+        //private string? _name;
         MyAlert _myAlert = new MyAlert();
+
+        private ScenarioContext _scenarioContext;
+
+        public _001TagesBTBSteps(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        }
 
         [Given(@"Navigieren Sie zum Menu ""(.*)""")]
         public void GivenNavigierenSieZumMenu(string menuName)
@@ -41,8 +48,9 @@ namespace ScadaWeb.StepDefinitions
         public void ThenDerBenutzerGibtImPop_UpFensterAn_(string inputText)
         {   
             _myAlert.EnterText(inputText);
-            _name = inputText;
- 
+            //_name = inputText;
+            _scenarioContext["inputText"] = inputText;
+
         }
 
         [Then(@"Der Benutzer klickt auf die Tastatur ""(.*)""")]
@@ -56,8 +64,9 @@ namespace ScadaWeb.StepDefinitions
         public void ThenDasNeueTages_BetriebstagebuchMitDemAngegebenenNamenErstelltWurde()
         {
             #nullable disable
-            _btbPage.MyVerifyEqualsText(_btbPage.btbName, _name);
+          //  _btbPage.MyVerifyEqualsText(_btbPage.btbName, _name);
             #nullable enable
+            _btbPage.MyVerifyEqualsText(_btbPage.btbName, (string)_scenarioContext["inputText"]);
         }
     }
 }
