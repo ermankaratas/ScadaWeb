@@ -49,6 +49,7 @@ namespace ScadaWeb.Pages
 
         public void MyHover(IWebElement element)
         {
+            Wait.Until(driver => element.Displayed); ;
             Actions actions = new Actions(Driver.GetDriver());
             actions.MoveToElement(element).Perform();
         }
