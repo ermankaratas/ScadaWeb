@@ -14,6 +14,8 @@ namespace ScadaWeb.Drivers
         public void BeforeScenario()
         {
             // Optional setup logic
+            //Driver.threadBrowserName.Value = "firefox";
+            Driver.threadBrowserName.Value = "edge";
         }
 
         [AfterScenario]
