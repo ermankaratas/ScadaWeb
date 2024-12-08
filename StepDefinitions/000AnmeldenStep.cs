@@ -12,14 +12,14 @@ namespace ScadaWeb.StepDefinitions
     [Binding]
     public class _000AnmeldenSteps
     {
-        private readonly ScenarioContext _scenarioContext;
+        //private readonly ScenarioContext _scenarioContext;
 
         private LoginPage _loginPage = new LoginPage();
 
-        public _000AnmeldenSteps(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
+       // public _000AnmeldenSteps(ScenarioContext scenarioContext)
+       // {
+       //     _scenarioContext = scenarioContext;
+       // }
         [Given(@"Navigieren Sie zu scada\.web")]
         public void GivenNavigierenSieZuScada_Web()
         {
